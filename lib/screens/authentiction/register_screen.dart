@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:threads_clone/screens/authentiction/login_screen.dart';
 import 'package:threads_clone/utils/colors.dart';
 import 'package:threads_clone/widget/button.dart';
 import 'package:threads_clone/widget/text_field.dart';
@@ -20,18 +21,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
-            height: MediaQuery.of(context).size.height,
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 32),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Column(
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.1,
+                  height: MediaQuery.of(context).size.height * 0.05,
                 ),
                 Image.asset(
                   'assets/images/threads.png',
-                  height: 70,
+                  height: 75,
                 ),
                 const SizedBox(
                   height: 30,
@@ -114,7 +113,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: TextStyle(color: Colors.white),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginScreen(),
+                          ),
+                        );
+                      },
                       child: const Text(
                         "Log In",
                         style: TextStyle(color: Colors.white),
